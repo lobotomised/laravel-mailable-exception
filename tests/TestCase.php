@@ -3,8 +3,8 @@
 namespace Lobotomised\LaravelMailableException\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Lobotomised\LaravelMailableException\LaravelMailableExceptionServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {

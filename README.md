@@ -15,11 +15,14 @@ You can install the package via composer:
 composer require lobotomised/laravel-mailable-exception
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="laravel-mailable-exception-migrations"
-php artisan migrate
+Modifier App\Exceptions\Handler;
+```php
+    public function register(): void
+    {
+        $this->reportable(function (Throwable $e) {
+            (new LaravelMailableException)->toMail($e);
+        });
+    }
 ```
 
 You can publish the config file with:

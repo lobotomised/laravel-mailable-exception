@@ -2,24 +2,19 @@
 
 namespace Lobotomised\LaravelMailableException;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Lobotomised\LaravelMailableException\Commands\LaravelMailableExceptionCommand;
+use Illuminate\Support\ServiceProvider;
 
-class LaravelMailableExceptionServiceProvider extends PackageServiceProvider
+class LaravelMailableExceptionServiceProvider extends ServiceProvider
 {
-    public function configurePackage(Package $package): void
+    public function boot(): void
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
-        $package
-            ->name('laravel-mailable-exception')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel_mailable_exception_table')
-            ->hasCommand(LaravelMailableExceptionCommand::class);
+        $configPath = __DIR__ . '/../config/mailable-exception.php';
+
+        $configKey = 'laravel-mailable-exception-config';
+
+        $this->publishes([$configPath => config_path('mailable-exception.php')], $configKey);
+        $this->mergeConfigFrom($configPath, $configKey);
+
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'mailable-exception');
     }
 }
