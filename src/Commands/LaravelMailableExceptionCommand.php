@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Lobotomised\LaravelMailableException\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelMailableExceptionCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-mailable-exception';
 
     public $description = 'My command';
 
