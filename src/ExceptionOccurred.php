@@ -16,9 +16,7 @@ class ExceptionOccurred extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public function __construct(public array $content)
-    {
-    }
+    public function __construct(public array $content) {}
 
     public function envelope(): Envelope
     {

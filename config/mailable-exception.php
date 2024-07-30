@@ -8,6 +8,6 @@ return [
     'to' => [
         'address' => 'your@example.com',
     ],
-    'subject' => "An exception has occurred",
+    'subject' => 'An exception has occurred',
     'allowed_environments' => ['production'],
 ];

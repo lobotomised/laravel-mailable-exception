@@ -8,7 +8,7 @@ class LaravelMailableExceptionServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        $configPath = __DIR__ . '/../config/mailable-exception.php';
+        $configPath = __DIR__.'/../config/mailable-exception.php';
 
         $configKey = 'laravel-mailable-exception-config';
 
