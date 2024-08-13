@@ -17,7 +17,7 @@ class LaravelMailableException
             return;
         }
 
-        if($to === 'your@example.com') {
+        if ($to === 'your@example.com') {
             Log::notice('The destination email address is not configured in the config file The destination email address is not configured');
 
             return;
