@@ -1,0 +1,67 @@
+{
+    "name": "lobotomised/laravel-mailable-exception",
+    "description": "Send any exception to an email",
+    "keywords": [
+        "laravel", "exception", "mailable", "laravel-mailable-exception"
+    ],
+    "homepage": "https://github.com/lobotomised/laravel-mailable-exception",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "lobotomised"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/bus": "^10.0|^11.0",
+        "illuminate/contracts": "^10.0|^11.0",
+        "illuminate/mail": "^10.0|^11.0",
+        "illuminate/queue": "^10.0|^11.0",
+        "illuminate/support": "^10.0|^11.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.14",
+        "nunomaduro/collision": "^8.1.1||^7.10.0",
+        "larastan/larastan": "^2.9",
+        "orchestra/testbench": "^9.0.0||^8.22.0",
+        "pestphp/pest": "^2.34",
+        "pestphp/pest-plugin-arch": "^2.7",
+        "pestphp/pest-plugin-laravel": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lobotomised\\LaravelMailableException\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lobotomised\\LaravelMailableException\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "qa": [
+            "@pint",
+            "@phpstan",
+            "@test"
+        ],
+        "pint": "@php vendor/bin/pint",
+        "phpstan": "@php vendor/bin/phpstan analyse",
+        "test": "@php vendor/bin/pest"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lobotomised\\LaravelMailableException\\LaravelMailableExceptionServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
