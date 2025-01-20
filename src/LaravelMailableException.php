@@ -13,7 +13,7 @@ class LaravelMailableException
         $allowedEnvironments = config('mailable-exception.allowed_environments');
         $to = config('mailable-exception.to.address');
 
-        if (! in_array(config('app.env'), $allowedEnvironments)) {
+        if ($allowedEnvironments === null || ! in_array(config('app.env'), $allowedEnvironments)) {
             return;
         }
 
